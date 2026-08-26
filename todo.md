@@ -28,3 +28,4 @@
 - [x] Verify the GitHub repository contains the expected latest main-branch commit.
 - [x] Commit the final project state and push the latest main branch to GitHub.
 - [x] Verify the GitHub main branch SHA matches the final local commit.
+- [ ] Rewrite StreamWeaver commit metadata with the requested author name and email, then force-update the private GitHub main branch.
