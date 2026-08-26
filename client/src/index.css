@@ -4,10 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -27,151 +27,59 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-:root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+:root, .dark {
+  --background: oklch(0.16 0.055 260);
+  --foreground: oklch(0.96 0.012 215);
+  --card: oklch(0.18 0.055 260 / .72);
+  --card-foreground: oklch(0.96 0.012 215);
+  --popover: oklch(0.18 0.055 260);
+  --popover-foreground: oklch(0.96 0.012 215);
+  --primary: oklch(0.89 0.095 206);
+  --primary-foreground: oklch(0.17 0.055 260);
+  --secondary: oklch(0.25 0.055 260);
+  --secondary-foreground: oklch(0.94 0.018 215);
+  --muted: oklch(0.23 0.05 260);
+  --muted-foreground: oklch(0.75 0.04 220);
+  --accent: oklch(0.24 0.075 245);
+  --accent-foreground: oklch(0.96 0.012 215);
+  --destructive: oklch(0.71 0.17 28);
+  --destructive-foreground: oklch(0.98 0.01 30);
+  --border: oklch(0.85 0.045 220 / .22);
+  --input: oklch(0.9 0.045 220 / .2);
+  --ring: oklch(0.89 0.095 206);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
-  }
+  * { @apply border-border outline-ring/50; }
+  html { background: #061735; }
+  body { @apply bg-background text-foreground; font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled) { @apply cursor-pointer; }
+  ::selection { background: rgba(165, 243, 252, .28); color: white; }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
-  }
+  .blueprint-shell { position: relative; isolation: isolate; background-color: #061735; background-image: linear-gradient(rgba(155, 228, 255, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(155, 228, 255, .07) 1px, transparent 1px), radial-gradient(circle at 74% 8%, rgba(28, 94, 190, .34), transparent 32rem), radial-gradient(circle at 5% 80%, rgba(0, 191, 208, .11), transparent 28rem); background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%; }
+  .blueprint-shell::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(90deg, transparent 49.94%, rgba(180, 236, 255, .12) 50%, transparent 50.06%), linear-gradient(transparent 49.94%, rgba(180, 236, 255, .11) 50%, transparent 50.06%); background-size: 100% 100%; mask-image: linear-gradient(to bottom, black, transparent 90%); }
+  .technical-card { border: 1px solid rgba(207, 250, 254, .25); background: linear-gradient(135deg, rgba(9, 39, 84, .82), rgba(4, 21, 52, .72)); box-shadow: inset 0 1px 0 rgba(207, 250, 254, .08), 0 18px 40px rgba(0, 9, 33, .18); }
+  .technical-frame { border: 1px solid rgba(207, 250, 254, .2); background: rgba(5, 23, 53, .48); }
+  .technical-label { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: rgba(207, 250, 254, .54); }
+  .technical-button { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid rgba(207, 250, 254, .44); background: rgba(207, 250, 254, .08); padding: .62rem .85rem; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: #ecfeff; transition: background-color .16s ease-out, transform .16s ease-out; }
+  .technical-button:hover { background: rgba(207, 250, 254, .16); }
+  .technical-button:active { transform: scale(.97); }
+  .technical-icon-button { display: grid; height: 36px; width: 36px; place-items: center; border: 1px solid rgba(207, 250, 254, .3); color: rgba(207, 250, 254, .8); transition: background-color .16s ease-out, transform .16s ease-out; }
+  .technical-icon-button:hover { background: rgba(207, 250, 254, .1); }
+  .technical-icon-button:active { transform: scale(.97); }
+  .dimension-chip { border-left: 1px solid rgba(207, 250, 254, .62); border-right: 1px solid rgba(207, 250, 254, .62); padding: .28rem .5rem; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 9px; letter-spacing: .16em; color: rgba(207, 250, 254, .73); }
+  .dimension-line { position: absolute; height: 1px; background: linear-gradient(90deg, transparent, rgba(207, 250, 254, .38) 18%, rgba(207, 250, 254, .38) 82%, transparent); }
+  .dimension-line::before, .dimension-line::after { content: ""; position: absolute; top: -3px; height: 7px; border-left: 1px solid rgba(207, 250, 254, .44); }
+  .dimension-line::before { left: 14%; } .dimension-line::after { right: 14%; }
+  .blueprint-corner { position: absolute; z-index: 5; height: 40px; width: 40px; border-left: 1px solid rgba(207, 250, 254, .36); border-top: 1px solid rgba(207, 250, 254, .36); }
+  .blueprint-corner::after { content: ""; position: absolute; left: 8px; top: 8px; height: 22px; width: 22px; border-left: 1px solid rgba(207, 250, 254, .22); border-top: 1px solid rgba(207, 250, 254, .22); }
+  .blueprint-flow { position: relative; }
+  .flow-node { min-height: 118px; border: 1px solid rgba(207, 250, 254, .23); background: rgba(6, 27, 63, .48); padding: 1rem; }
+  @media (min-width: 768px) { .flow-node:not(:last-child)::after { content: ""; position: absolute; right: -14px; top: 50%; z-index: 2; width: 14px; border-top: 1px solid rgba(207, 250, 254, .42); } .flow-node:not(:last-child)::before { content: ""; position: absolute; right: -13px; top: calc(50% - 3px); z-index: 3; height: 7px; width: 7px; transform: rotate(45deg); border-right: 1px solid rgba(207, 250, 254, .6); border-top: 1px solid rgba(207, 250, 254, .6); } }
 }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }

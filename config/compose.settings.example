@@ -1,0 +1,2 @@
+# Copy these settings to a local .env file before starting Compose.
+ALERT_THRESHOLD=10000

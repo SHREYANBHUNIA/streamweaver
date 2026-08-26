@@ -1,0 +1,25 @@
+# Project TODO
+
+- [x] Define the StreamWeaver repository layout for Go engine modules, dashboard, benchmarks, deployment, and documentation.
+- [x] Implement a Go transaction event model, bounded ingestion queue, and incremental pipeline runtime.
+- [x] Implement filter, map, and stateful SUM(amount) aggregation operators.
+- [x] Implement event-time tumbling and sliding windows with watermarks and configurable late-event policy.
+- [x] Implement RocksDB-backed state abstraction, checkpoint manifests, deterministic restart recovery, and defined exactly-once recovery semantics.
+- [x] Implement producer and operator backpressure telemetry with bounded buffering and safe slow-down behavior.
+- [x] Implement Go HTTP API endpoints for health, pipeline configuration, window results, metrics, alerts, and demo event submission.
+- [x] Implement Kafka configuration and consumer/producer adapters for continuous transaction ingestion.
+- [x] Preserve the transaction-demo behavior and wording: SUM(amount), 10-second windows, and configured alert threshold.
+- [x] Connect alert threshold crossings and recovery failures to owner notifications.
+- [x] Build a React monitoring dashboard for live pipeline health, throughput, latency, backpressure, checkpoint status, window aggregations, late events, and active alerts.
+- [x] Apply the requested professional architectural blueprint visual system: deep royal blue, subtle grid, CAD-like lines, dimension markers, and bold white typography.
+- [x] Add local Docker Compose services for Kafka, the Go engine, persistent RocksDB storage, dashboard/API, and demo event generation.
+- [x] Add runnable setup guidance and clear deployment constraints for the continuous service.
+- [x] Add Go verification coverage for operators, windowing, late events, checkpoint recovery, and backpressure.
+- [x] Add Go benchmark coverage for operators and window aggregation.
+- [x] Add Vitest coverage for dashboard API contract and key presentation helpers.
+- [x] Verify TypeScript checks, Vitest, Go tests, Go benchmarks, and the rendered dashboard.
+- [x] Add read/update pipeline configuration endpoints and verification coverage.
+- [x] Wire Go threshold and recovery alerts through an authenticated bridge to the project owner notification channel.
+- [x] Add Go benchmark coverage for filter/map operator execution.
+- [x] Extract dashboard presentation helpers and add Vitest coverage for formatting and status presentation.
+- [x] Provide a self-contained local owner-alert bridge in the Compose topology without requiring user-supplied credentials.

@@ -1,0 +1,67 @@
+services:
+  kafka:
+    image: bitnami/kafka:3.8
+    environment:
+      KAFKA_CFG_NODE_ID: 0
+      KAFKA_CFG_PROCESS_ROLES: broker,controller
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: 0@kafka:9093
+      KAFKA_CFG_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_KRAFT_CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+    ports:
+      - "9092:9092"
+    volumes:
+      - kafka_data:/bitnami/kafka
+
+  engine:
+    build:
+      context: .
+      dockerfile: docker/streamweaver.Dockerfile
+    environment:
+      KAFKA_BROKERS: kafka:9092
+      KAFKA_TOPIC: transactions
+      KAFKA_GROUP_ID: streamweaver-transaction-demo
+      ALERT_THRESHOLD: ${ALERT_THRESHOLD:-10000}
+      OWNER_ALERT_WEBHOOK_URL: http://dashboard:3000/api/streamweaver/owner-alert
+      OWNER_ALERT_TOKEN: streamweaver-local-alert-token
+    depends_on:
+      - kafka
+    ports:
+      - "8080:8080"
+    volumes:
+      - streamweaver_state:/var/lib/streamweaver
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: docker/dashboard.Dockerfile
+    environment:
+      STREAMWEAVER_API_URL: http://engine:8080
+      STREAMWEAVER_ALERT_TOKEN: streamweaver-local-alert-token
+      PORT: 3000
+      NODE_ENV: production
+    depends_on:
+      - engine
+    ports:
+      - "3000:3000"
+
+  demo-producer:
+    build:
+      context: .
+      dockerfile: docker/demo-producer.Dockerfile
+    environment:
+      KAFKA_BROKERS: kafka:9092
+      KAFKA_TOPIC: transactions
+      DEMO_INTERVAL: 700ms
+    depends_on:
+      - kafka
+    restart: unless-stopped
+
+volumes:
+  kafka_data:
+  streamweaver_state:
