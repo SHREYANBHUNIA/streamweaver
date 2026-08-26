@@ -26,5 +26,5 @@
 - [x] Create a private GitHub repository and push the verified StreamWeaver source.
 - [x] Configure the private GitHub remote, commit the final project state, and push the main branch.
 - [x] Verify the GitHub repository contains the expected latest main-branch commit.
-- [ ] Commit the final project state and push the latest main branch to GitHub.
-- [ ] Verify the GitHub main branch SHA matches the final local commit.
+- [x] Commit the final project state and push the latest main branch to GitHub.
+- [x] Verify the GitHub main branch SHA matches the final local commit.
